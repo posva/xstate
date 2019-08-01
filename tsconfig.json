@@ -2,11 +2,20 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "target": "es5",
-    "strict": true,
+    // "strict": true,
+    // all options applied by strict except
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    // "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+
+    "stripInternal": true,
     "declaration": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strictNullChecks": true,
     "outDir": "./lib",
     "moduleResolution": "node",
     "downlevelIteration": true,
@@ -14,8 +23,7 @@
     "jsx": "react",
     "lib": ["es6", "dom"],
     "types": ["mocha", "node", "core-js"],
-    "sourceMap": true,
-    "strictPropertyInitialization": true
+    "sourceMap": true
   },
   "include": ["src/**/*", "test/**/*"],
   "exclude": ["examples/**/*", "editor/node_modules/**/*"]

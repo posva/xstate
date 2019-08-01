@@ -26,6 +26,23 @@ describe('spawning machines', () => {
     }
   });
 
+  const otherMachine = Machine({
+    states: {
+      one: {
+        on: {
+          '': {
+            target: 'two',
+            actions: [
+              sendParent('parent'),
+              sendParent(ctx => ({ type: 'parent', ctx }))
+            ]
+          }
+        }
+      },
+      two: {}
+    }
+  });
+
   const context = {
     todoRefs: {} as Record<string, Actor>
   };
